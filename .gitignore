@@ -1,0 +1,3 @@
+dist/*
+.cache
+firebase-debug.log

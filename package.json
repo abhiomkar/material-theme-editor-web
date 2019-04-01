@@ -1,0 +1,21 @@
+{
+  "name": "material-theme-editor-web",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel watch index.js | browser-sync start --server --files 'public/*.*'",
+    "build": "parcel build ./index.js"
+  },
+  "dependencies": {
+    "cash-dom": "^3.1.0",
+    "lit-html": "^1.0.0",
+    "material-components-web": "^1.1.0",
+    "sass.js": "^0.10.13"
+  },
+  "devDependencies": {
+    "sass": "^1.14.3",
+    "parcel-bundler": "^1.10.3",
+    "browser-sync": "^2.26.3"
+  }
+}

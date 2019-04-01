@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+$editor-width: 320px;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.material-theme-editor {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.material-theme-editor__cover {
+  margin-right: 320px;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  visibility: hidden;
+
+  .sass-loader-injected & {
+    visibility: visible
+  }
+
+  .sass-loader-styles-empty & {
+    visibility: hidden;
+  }
+}
+
+.material-theme-editor__editor,
+.material-theme-editor__loader,
+.material-theme-editor__status {
+  @import "material-components-web/material-components-web";
+  @include mdc-typography-base;
+
+  @at-root {
+    body {
+      background-color: rgba(mdc-theme-prop-value(primary), .12);
+    }
+  }
+}
+
+.material-theme-editor__editor {
+  position: absolute;
+  right: 0;
+  background: #fff;
+  padding: 24px;
+  width: $editor-width;
+  height: 100%;
+
+  .mte-text-field-label {
+    @include mdc-typography(body2);
+
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .mdc-text-field {
+    width: 100%;
+  }
+}
+
+.material-theme-editor__loader {
+  visibility: visible;
+
+  .sass-loader-injected & {
+    visibility: hidden;
+  }
+
+  .sass-loader-styles-empty & {
+    visibility: visible;
+  }
+
+  position: absolute;
+  top: 45%;
+  left: calc(55% - 320px);
+
+  margin-right: $editor-width;
+}
+
+.material-theme-editor__status {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 13px;
+  background-color: #388E3C;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 16px;
+
+  visibility: hidden;
+
+  .sass-loader-injected.sass-loader-compiling & {
+    visibility: visible;
+  }
+}
